@@ -49,3 +49,41 @@ elif course_decision == "C":
 else:
     print("Input Error")
 
+# Second decision for studying
+print("Choose your course:")
+print("Programming, Math, English, History")
+
+study_decision = input("What course are you studying for?: ")
+
+study_options = ["Programming", "Math", "English", "History"]
+
+
+# Branching based on study_decision
+if study_decision == "Programming" and study_decision in study_options:
+    # The programs trys to find what is best for the user
+    if social_points < 50 and current_gpa < 3.0:
+        current_gpa += 0.45
+        study_hours += 0.5
+        print("Speak with a TA")
+    else:
+        study_hours += 0.25
+        current_gpa += 0.4
+        print("Talk to classmates")
+elif study_decision == "Math" and study_decision in study_options:
+        print("Utilize QEP Math")
+        current_gpa += 0.32
+elif study_decision == "English" and study_decision in study_options:
+    if social_points > 75:
+        print("You are a good public speaker")
+        current_gpa += 0.34
+    else:
+        print("English is a complicated language")
+        current_gpa += 0.5
+elif study_decision == "English" and study_decision in study_options:
+    print("Put more hours into study a map!")
+    current_gpa += 0.36
+elif study_decision == "Graphic Design" and study_decision not in study_options:
+    print("Course not in schedule")
+    current_gpa += 0.1
+else:
+    print("Input Error")
