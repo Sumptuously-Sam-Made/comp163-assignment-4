@@ -5,3 +5,47 @@ study_hours = int(22)
 social_points = int(75)
 stress_level = int(50)
 final_gpa = 0
+
+# Statistics before the game starts
+print("=== Welcome", student_name, "===")
+print("GPA:", current_gpa)
+print("Study Hours:", study_hours)
+print("Social Points:", social_points)
+print("Stress Level:", stress_level)
+
+# First decision for course load
+print("Choose your course load:")
+print("A) Light (12 credits)")
+print("B) Standard (15 credits)")
+print("C) Heavy (18 credits)")
+
+course_decision = input("A, B, or C?: ")
+
+# Branching based on course_decision
+if course_decision == "A":
+    # There is an increase in study hours if a student needs it
+    if current_gpa < 3.0:
+        study_hours += 4
+        print("Your study hours has changed from", study_hours-4, "to", study_hours)
+    else:
+        print("Continue to work so you can maintain a higher GPA")
+
+# The outcomes are based on how much you need social points, decompression, or studying
+elif course_decision == "B":
+    if social_points < 50 < stress_level:
+        print("Try to be more involved in the campus!")
+    elif not (current_gpa > 3.5 or study_hours > 15):
+        print("Consider a study session with others")
+elif course_decision == "C":
+    if current_gpa >= 3.5:
+        if stress_level == 0:
+            print("You have done the impossible")
+        elif stress_level >= 50:
+            print("Less Classes, Less Stress")
+        elif stress_level < 50:
+            print("Make it through")
+    else:
+        print("Ready for a heavy semster")
+else:
+    print("Input Error")
+
