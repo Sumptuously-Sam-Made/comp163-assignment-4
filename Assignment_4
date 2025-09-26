@@ -1,0 +1,7 @@
+# Basic info for code development
+student_name = "Samuel"
+current_gpa = 3.7
+study_hours = int(22)
+social_points = int(75)
+stress_level = int(50)
+final_gpa = 0
