@@ -87,3 +87,59 @@ elif study_decision == "Graphic Design" and study_decision not in study_options:
     current_gpa += 0.1
 else:
     print("Input Error")
+
+# Third decision for final assessments
+print("Choose your course for studying today:")
+print("A) Project")
+print("B) Written Exam")
+print("C) Oral Exam")
+
+Final_assessment = input("A, B, or C?: ")
+
+# Branching based on Final_assessment
+if Final_assessment == "A":
+    # The user's chooses can change both the social points and the stress level
+    if not (social_points + 25 > 100) and not (stress_level - 25 > 0):
+        social_points += 25
+        stress_level -= 25
+        final_gpa = current_gpa
+        if final_gpa is current_gpa:
+            print("All things check out")
+    else:
+        final_gpa = current_gpa
+        print("Social points or stress level could not be changed")
+# Shows the difference between Written and Oral exams
+elif Final_assessment == "B":
+    print("Both exams, different concepts")
+    final_gpa = current_gpa
+    if stress_level > 75:
+        print("Don't forget to bring a pencil!")
+        if final_gpa is current_gpa:
+            print("All things check out")
+    else:
+        print("Be ready to write")
+        if final_gpa is current_gpa:
+            print("All things check out")
+        elif final_gpa is not current_gpa:
+            print("Error in code")
+elif Final_assessment == "C":
+    print("Both exams, different concepts")
+    final_gpa = current_gpa
+    # Implementation of social skills
+    if social_points > 75:
+        print("Your social skills will come in handy")
+        if final_gpa is current_gpa:
+            print("All things check out")
+    else:
+        print("Make flashcards for memorization")
+        if final_gpa is current_gpa:
+            print("All things check out")
+        elif final_gpa is not current_gpa:
+            print("Error in code")
+
+# Ending Statistics
+print(f"=== {student_name}'s Ending ===")
+print("GPA:", round(final_gpa,2))
+print("Study Hours:", study_hours)
+print("Social Points:", social_points)
+print("Stress Level:", stress_level)
